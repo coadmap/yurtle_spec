@@ -7,7 +7,7 @@ servers:
 paths:
   /tasks:
     post:
-      summary: Create New Task
+      summary: Get All My Tasks
       operationId: post-user
       responses:
         '200':
@@ -44,6 +44,27 @@ paths:
         description: Post the necessary fields for the API to create a new user.
       description: Create a new user.
     parameters: []
+    get:
+      summary: ''
+      operationId: get-tasks
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  tasks:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Task'
+                  total_count:
+                    type: number
+                required:
+                  - tasks
+                  - total_count
+      description: Fetch all my tasks
   '/tasks/{id}':
     parameters:
       - schema:
@@ -84,7 +105,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/User'
+                $ref: '#/components/schemas/Task'
               examples:
                 Updated User Rebecca Baker:
                   value:
@@ -107,12 +128,10 @@ paths:
                 name:
                   type: string
                 deadline:
-                  oneOf:
-                    - properties: {}
-                      format: date
                   type:
                     - string
                     - 'null'
+                  format: date
             examples: {}
         description: Patch user properties to update.
   '/tasks/{id}/complete':
