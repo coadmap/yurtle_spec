@@ -1,0 +1,22 @@
+{
+  "name": "yurtle_spec",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "mock:start": "npx prism mock ./reference/Yurtle-API.yaml -p 4444"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coadmap/yurtle_spec.git"
+  },
+  "author": "SIMULA Labs inc.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/coadmap/yurtle_spec/issues"
+  },
+  "homepage": "https://github.com/coadmap/yurtle_spec#readme",
+  "devDependencies": {
+    "prism": "^4.1.2"
+  }
+}
