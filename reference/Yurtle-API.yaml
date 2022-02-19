@@ -10,8 +10,8 @@ paths:
       summary: Get All My Tasks
       operationId: post-user
       responses:
-        '200':
-          description: User Created
+        '201':
+          description: Task Created
           content:
             application/json:
               schema:
