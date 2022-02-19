@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "mock:start": "npx prism mock ./reference/Yurtle-API.yaml -p 4444"
+    "mock:start": "prism mock ./reference/Yurtle-API.yaml -p 4444"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/coadmap/yurtle_spec#readme",
   "devDependencies": {
-    "prism": "^4.1.2"
+    "@stoplight/prism-cli": "^4.8.0"
   }
 }
