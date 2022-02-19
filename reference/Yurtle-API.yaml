@@ -82,16 +82,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Task'
-              examples:
-                Get User Alice Smith:
-                  value:
-                    id: 142
-                    firstName: Alice
-                    lastName: Smith
-                    email: alice.smith@gmail.com
-                    dateOfBirth: '1997-10-31'
-                    emailVerified: true
-                    signUpDate: '2019-08-24'
+              examples: {}
         '404':
           description: Not Found
       operationId: get-task
@@ -106,16 +97,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Task'
-              examples:
-                Updated User Rebecca Baker:
-                  value:
-                    id: 13
-                    firstName: Rebecca
-                    lastName: Baker
-                    email: rebecca@gmail.com
-                    dateOfBirth: '1985-10-02'
-                    emailVerified: false
-                    createDate: '2019-08-24'
+              examples: {}
         '404':
           description: Not Found
       description: Update the information of an existing task.
@@ -163,21 +145,14 @@ paths:
 components:
   schemas:
     Task:
-      title: Task
       type: object
+      title: Task
       description: ''
-      examples:
-        - id: 142
-          firstName: Alice
-          lastName: Smith
-          email: alice.smith@gmail.com
-          dateOfBirth: '1997-10-31'
-          emailVerified: true
-          signUpDate: '2019-08-24'
+      examples: []
       properties:
         id:
-          type: integer
-          description: Unique identifier for the given user.
+          type: string
+          format: uuid
         name:
           type: string
         completed:
@@ -190,7 +165,6 @@ components:
         created_at:
           type: string
           format: date-time
-          description: The date that the user was created.
           readOnly: true
         updated_at:
           type: string
