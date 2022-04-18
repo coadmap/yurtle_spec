@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.0.0
 info:
   title: Yurtle API
   version: '1.0'
@@ -15,7 +15,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Task'
+                $ref: ../models/Task.yaml
               examples: {}
         '400':
           description: Missing Required Parameters

@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "swagger-cli bundle -o build/openapi.yaml -t yaml reference/Yurtle-API.yaml",
     "mock:start": "prism mock ./reference/Yurtle-API.yaml -p 4444"
   },
   "repository": {
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/coadmap/yurtle_spec#readme",
   "devDependencies": {
+    "@apidevtools/swagger-cli": "^4.0.4",
     "@stoplight/prism-cli": "^4.8.0"
   }
 }
