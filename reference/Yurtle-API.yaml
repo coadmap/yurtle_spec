@@ -58,7 +58,7 @@ paths:
                   tasks:
                     type: array
                     items:
-                      $ref: '#/components/schemas/Task'
+                      $ref: ../models/Task.yaml
                   total_count:
                     type: number
                 required:
@@ -72,6 +72,7 @@ paths:
         name: id
         in: path
         required: true
+        description: UUID
     get:
       summary: Get Task
       tags: []
@@ -81,7 +82,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Task'
+                $ref: ../models/Task.yaml
               examples: {}
         '404':
           description: Not Found
@@ -96,7 +97,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Task'
+                $ref: ../models/Task.yaml
               examples: {}
         '404':
           description: Not Found
@@ -123,6 +124,7 @@ paths:
         name: id
         in: path
         required: true
+        description: UUID
     post:
       summary: Complete Task
       tags: []
@@ -132,7 +134,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Task'
+                $ref: ../models/Task.yaml
         '404':
           description: Not Found
       operationId: complete-task
@@ -143,37 +145,4 @@ paths:
               type: object
       description: Complete task
 components:
-  schemas:
-    Task:
-      type: object
-      title: Task
-      description: ''
-      examples: []
-      properties:
-        id:
-          type: string
-          format: uuid
-        name:
-          type: string
-        completed:
-          type: boolean
-        deadline:
-          type:
-            - string
-            - 'null'
-          format: date
-        created_at:
-          type: string
-          format: date-time
-          readOnly: true
-        updated_at:
-          type: string
-          format: date-time
-          readOnly: true
-      required:
-        - id
-        - name
-        - completed
-        - deadline
-        - created_at
-        - updated_at
+  schemas: {}

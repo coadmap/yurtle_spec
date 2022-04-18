@@ -1,0 +1,30 @@
+title: Task
+type: object
+properties:
+  id:
+    type: string
+    format: uuid
+  name:
+    type: string
+  completed:
+    type: boolean
+  deadline:
+    type:
+      - string
+      - 'null'
+    format: date
+  created_at:
+    type: string
+    format: date-time
+    readOnly: true
+  updated_at:
+    type: string
+    format: date-time
+    readOnly: true
+required:
+  - id
+  - name
+  - completed
+  - deadline
+  - created_at
+  - updated_at
